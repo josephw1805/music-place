@@ -10,6 +10,6 @@ class ArtistDashboardController extends Controller
 {
     function index(): View
     {
-        return view('artist.dashboard');
+        return view('frontend.artist-dashboard.index');
     }
 }
