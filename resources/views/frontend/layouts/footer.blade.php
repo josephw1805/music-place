@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col-lg-3 wow fadeInUp">
                         <div class="wsus__footer_3_logo_area">
-                            <a class="logo" href="index.html">
+                            <a class="logo" href="{{ route('home') }}">
                                 <img src="{{ asset('frontend/assets/images/footer_logo.png') }}" alt="EduCore"
                                     class="img-fluid">
                             </a>

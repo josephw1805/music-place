@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Admin - Forgot Password</title>
     <!-- CSS files -->
-    <link href="{{ asset('admin/assets/dist/css/tabler.min.css?1692870487') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.1.1/dist/css/tabler.min.css" />
     <link href="{{ asset('admin/assets/dist/css/demo.min.css?1692870487') }}" rel="stylesheet" />
     <style>
         @import url('https://rsms.me/inter/inter.css');
@@ -41,8 +41,8 @@
                         <!-- Email Address -->
                         <div class="mb-2">
                             <label class="form-label">Email address</label>
-                            <input type="email" class="form-control" value="{{ old('email') }}"
-                                placeholder="your@email.com" autocomplete="off">
+                            <input type="email" class="form-control" type="email" name="email"
+                                value="{{ old('email') }}" placeholder="your@email.com" autocomplete="off">
                             <x-input-error :messages="$errors->get('email')" class="mt-2" />
                         </div>
 
@@ -57,7 +57,7 @@
         </div>
     </div>
     <!-- Tabler Core -->
-    <script src="{{ asset('admin/assets/dist/js/tabler.min.js?1692870487') }}" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tabler/core@1.1.1/dist/js/tabler.min.js"></script>
     <script src="{{ asset('admin/assets/dist/js/demo.min.js?1692870487') }}" defer></script>
 </body>
 

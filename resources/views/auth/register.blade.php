@@ -24,21 +24,7 @@
         </div>
     </div>
     <!--============ PRELOADER START ===========-->
-    <header class="header_3">
-        <div class="row">
-            <div class="col-xxl-4 col-lg-7 col-md-8 d-none d-md-block">
-                <ul class="wsus__header_left d-flex flex-wrap">
-                    <li><a href="https://www.facebook.com/0905CyndiWang/" target="_blank"><i
-                                class="fab fa-facebook-f"></i> 2M
-                            Followers</a></li>
-                    <li><a href="https://weibo.com/u/1504965390" target="_blank"><i class="fab fa-weibo"></i> 8M
-                            Followers</a></li>
-                    <li><a href="https://www.instagram.com/cyndiloves2sing/" target="_blank"><i
-                                class="fab fa-instagram"></i> 840k Followers</a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
+
     <section class="wsus__sign_in">
         <div class="row align-items-center">
             <div class="col-xxl-5 col-xl-6 col-lg-6 wow fadeInLeft">
@@ -48,22 +34,27 @@
             </div>
             <div class="col-xxl-4 col-xl-5 col-lg-6 col-md-9 m-auto wow fadeInRight">
                 <div class="wsus__sign_form_area">
+                    <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+                                aria-selected="true">Student</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-profile" type="button" role="tab"
+                                aria-controls="pills-profile" aria-selected="false">Artist</button>
+                        </li>
+                    </ul>
                     <div class="tab-content" id="pills-tabContent">
                         <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
                             aria-labelledby="pills-home-tab" tabindex="0">
                             <!-- Session Status -->
                             <x-auth-session-status class="mb-4" :status="session('status')" />
 
-                            <form method="POST" action="{{ route('register') }}">
+                            <form method="POST" action="{{ route('register', ['type' => 'student']) }}">
                                 @csrf
                                 <h2>Create an Account<span>!</span></h2>
-                                <div class="wsus__login_form_input">
-                                    <span class="new_user">Already have an account? </span><a
-                                        class="text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                                        href="{{ route('login') }}">
-                                        {{ __('Sign In') }}
-                                    </a>
-                                </div>
                                 <div class="row">
                                     <div class="col-xl-12">
                                         <!-- Name -->
@@ -93,6 +84,16 @@
                                             <x-input-error :messages="$errors->get('password')" class="mt-2" />
                                         </div>
                                     </div>
+                                    <!-- Confirm Password -->
+                                    <div class="col-xl-12">
+                                        <div class="wsus__login_form_input">
+                                            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+                                            <x-text-input id="password_confirmation" class="block mt-1 w-full"
+                                                type="password" name="password_confirmation" required
+                                                autocomplete="new-password" />
+                                            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+                                        </div>
+                                    </div>
                                     <div class="col-xl-12">
                                         <div class="wsus__login_form_input">
                                             <button type="submit" class="common_btn">{{ __('Register') }}</button>
@@ -100,6 +101,76 @@
                                     </div>
                                 </div>
                             </form>
+                        </div>
+                        <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                            aria-labelledby="pills-profile-tab" tabindex="0">
+                            <!-- Session Status -->
+                            <x-auth-session-status class="mb-4" :status="session('status')" />
+                            <form method="POST" action="{{ route('register', ['type' => 'artist']) }}" enctype="multipart/form-data">
+                                @csrf
+                                <h2>Create an Account<span>!</span></h2>
+                                <div class="row">
+                                    <div class="col-xl-6">
+                                        <!-- Name -->
+                                        <div class="wsus__login_form_input">
+                                            <x-input-label for="name" :value="__('Name')" />
+                                            <x-text-input id="name" class="block mt-1 w-full" type="text"
+                                                name="name" :value="old('name')" required autofocus
+                                                autocomplete="name" />
+                                            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6">
+                                        <!-- Email Address -->
+                                        <div class="wsus__login_form_input">
+                                            <x-input-label for="email" :value="__('Email')" />
+                                            <x-text-input type="email" name="email" :value="old('email')" required
+                                                autofocus autocomplete="username" />
+                                            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                                        </div>
+                                    </div>
+                                    <!-- Password -->
+                                    <div class="col-xl-12">
+                                        <div class="wsus__login_form_input">
+                                            <x-input-label for="password" :value="__('Password')" />
+                                            <x-text-input id="password" class="block mt-1 w-full" type="password"
+                                                name="password" required autocomplete="current-password" />
+                                            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                                        </div>
+                                    </div>
+                                    <!-- Confirm Password -->
+                                    <div class="col-xl-12">
+                                        <div class="wsus__login_form_input">
+                                            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+                                            <x-text-input id="password_confirmation" class="block mt-1 w-full"
+                                                type="password" name="password_confirmation" required
+                                                autocomplete="new-password" />
+                                            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+                                        </div>
+                                    </div>
+                                    <!-- Document -->
+                                    <div class="col-xl-12">
+                                        <div class="wsus__login_form_input">
+                                            <x-input-label for="document" :value="__('Document')" />
+                                            <x-text-input type="file" name="document" required />
+                                            <x-input-error :messages="$errors->get('document')" class="mt-2" />
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-12">
+                                        <div class="wsus__login_form_input">
+                                            <button type="submit" class="common_btn">Sign Up</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="wsus__login_form_input">
+                            <span class="new_user">Already have an account? </span><a
+                                class="text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                href="{{ route('login') }}">
+                                {{ __('Sign In') }}
+                            </a>
                         </div>
                     </div>
                 </div>

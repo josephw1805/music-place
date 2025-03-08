@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Admin - Reset Password</title>
     <!-- CSS files -->
-    <link href="{{ asset('admin/assets/dist/css/tabler.min.css?1692870487') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.1.1/dist/css/tabler.min.css" />
     <link href="{{ asset('admin/assets/dist/css/demo.min.css?1692870487') }}" rel="stylesheet" />
     <style>
         @import url('https://rsms.me/inter/inter.css');
@@ -36,7 +36,7 @@
                         <input type="hidden" name="token" value="{{ $request->route('token') }}">
                         <div>
                             <label class="form-label">Email address</label>
-                            <input type="email" class="form-control" value="{{ old('email', $request->email) }}"
+                            <input type="email" class="form-control" name="email" value="{{ old('email', $request->email) }}"
                                 autocomplete="off">
                             <x-input-error :messages="$errors->get('email')" class="mt-2" />
                         </div>
@@ -46,7 +46,7 @@
                                 Password
                             </label>
                             <div class="input-group input-group-flat">
-                                <input type="password" class="form-control password" placeholder="Your password"
+                                <input type="password" class="form-control password" name="password" placeholder="Your password"
                                     autocomplete="off">
                                 <span class="input-group-text toggle-password">
                                     <a href="javascript:;" class="link-secondary" title="Show password"
@@ -70,7 +70,7 @@
                                 Confirm Password
                             </label>
                             <div class="input-group input-group-flat">
-                                <input id="password_confirmation" class="form-control confirm-password" type="password"
+                                <input id="password_confirmation" class="form-control confirm-password" name="password_confirmation" type="password"
                                     name="password_confirmation" required autocomplete="new-password">
                                 <span class="input-group-text toggle-confirm-password">
                                     <a href="javascript:;" class="link-secondary" title="Show password"
@@ -98,7 +98,7 @@
     </div>
 
     <!-- Tabler Core -->
-    <script src="{{ asset('admin/assets/dist/js/tabler.min.js?1692870487') }}" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tabler/core@1.1.1/dist/js/tabler.min.js"></script>
     <script src="{{ asset('admin/assets/dist/js/demo.min.js?1692870487') }}" defer></script>
 </body>
 
