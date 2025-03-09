@@ -4,7 +4,7 @@
             <ul class="wsus__header_left d-flex flex-wrap">
                 <li><a href="https://www.facebook.com/0905CyndiWang/" target="_blank"><i class="fab fa-facebook-f"></i> 2M
                         Followers</a></li>
-                <li><a href="https://weibo.com/u/1504965390" target="_blank"><i class="fab fa-weibo"></i> 8M
+                <li><a href="https://www.tiktok.com/@cyndiwang905" target="_blank"><i class="fab fa-tiktok"></i> 282.9K
                         Followers</a></li>
                 <li><a href="https://www.instagram.com/cyndiloves2sing/" target="_blank"><i
                             class="fab fa-instagram"></i> 840k Followers</a></li>

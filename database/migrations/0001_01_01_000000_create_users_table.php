@@ -24,7 +24,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('facebook')->nullable();
-            $table->string('x')->nullable();
+            $table->string('tiktok')->nullable();
             $table->string('instagram')->nullable();
             $table->string('website')->nullable();
             $table->string('github')->nullable();

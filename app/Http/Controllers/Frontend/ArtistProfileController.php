@@ -10,18 +10,18 @@ use App\Traits\FileUpload;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 
-class ProfileController extends Controller
+class ArtistProfileController extends Controller
 {
     use FileUpload;
 
     public function index()
     {
-        return view('frontend.student-dashboard.profile.index');
+        return view('frontend.artist-dashboard.profile.index');
     }
 
     public function edit(User $user)
     {
-        return view('frontend.student-dashboard.profile.edit', compact('user'));
+        return view('frontend.artist-dashboard.profile.edit', compact('user'));
     }
 
     public function updateProfile(ProfileUpdateRequest $request): RedirectResponse
@@ -47,7 +47,6 @@ class ProfileController extends Controller
         $user->instagram = $request->instagram;
         $user->website = $request->website;
         $user->save();
-
 
         notyf()->success('Updated successfully');
 

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Frontend\ArtistDashboardController;
+use App\Http\Controllers\Frontend\ArtistProfileController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\ProfileController;
 use App\Http\Controllers\Frontend\StudentDashboardController;
@@ -31,6 +32,12 @@ Route::group(['middleware' => ['auth:web', 'verified', 'check_role:student'], 'p
  */
 Route::group(['middleware' => ['auth:web', 'verified', 'check_role:artist'], 'prefix' => 'artist', 'as' => 'artist.'], function () {
     Route::get('/dashboard', [ArtistDashboardController::class, 'index'])->name('dashboard');
+
+    /** Profile Routes */
+    Route::get('/profile', [ArtistProfileController::class, 'index'])->name('profile.index');
+    Route::get('/profile/edit/{user}', [ArtistProfileController::class, 'edit'])->name('profile.edit');
+    Route::post('/profile/update', [ArtistProfileController::class, 'updateProfile'])->name('profile.update');
+    Route::post('/profile/update-password', [ArtistProfileController::class, 'updatePassword'])->name('profile.update-password');
 });
 
 require __DIR__ . '/auth.php';

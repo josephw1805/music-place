@@ -1,4 +1,4 @@
-<footer class="footer_3" style="background: url({{ asset('frontend/assets/images/footer_3_bg.jpg') }}");">
+<footer class="footer_3" style="background: url({{ asset('frontend/assets/images/footer_3_bg.jpg') }});">
     <div class="footer_3_overlay pt_120 xs_pt_100">
         <div class="wsus__footer_bottom">
             <div class="container">
@@ -12,7 +12,7 @@
                             <p>Nunc in sollicitudin diam, ut bibendum malesuada sodales porttitor.</p>
                             <h2>Follow Us On</h2>
                             <ul class="d-flex flex-wrap">
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-x-twitter"></i></a></li>
                                 <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                 <li><a href="#"><i class="fab fa-instagram"></i></a></li>
                             </ul>

@@ -13,7 +13,8 @@
         </div>
         <ul class="wsus__dashboard_sidebar_menu">
             <li>
-                <a href="{{ route('student.dashboard') }}" class="{{ request()->is('artist/dashboard') ? 'active' : '' }}">
+                <a href="{{ route('artist.dashboard') }}"
+                    class="{{ request()->is('artist/dashboard') ? 'active' : '' }}">
                     <div class="img">
                         <img src="{{ asset('frontend/assets/images/dash_icon_8.png') }}" alt="icon"
                             class="img-fluid w-100">
@@ -22,7 +23,8 @@
                 </a>
             </li>
             <li>
-                <a href="dashboard_profile.html">
+                <a href="{{ route('artist.profile.index') }}"
+                    class="{{ request()->is('artist/profile*') ? 'active' : '' }}">
                     <div class="img">
                         <img src="{{ asset('frontend/assets/images/dash_icon_1.png') }}" alt="icon"
                             class="img-fluid w-100">
@@ -40,12 +42,12 @@
                 </a>
             </li>
             <li>
-                <a href="dashboard_student.html">
+                <a href="dashboard_artist.html">
                     <div class="img">
                         <img src="{{ asset('frontend/assets/images/dash_icon_6.png') }}" alt="icon"
                             class="img-fluid w-100">
                     </div>
-                    Students
+                    student
                 </a>
             </li>
             <li>

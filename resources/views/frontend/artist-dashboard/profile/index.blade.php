@@ -21,7 +21,7 @@
     <section class="wsus__dashboard mt_90 xs_mt_70 pb_120 xs_pb_100">
         <div class="container">
             <div class="row">
-                @include('frontend.student-dashboard.sidebar')
+                @include('frontend.artist-dashboard.sidebar')
                 <div class="col-xl-9 col-md-8 wow fadeInRight">
                     <div class="wsus__dashboard_contant">
                         <div class="wsus__dashboard_contant_top d-flex flex-wrap justify-content-between">
@@ -30,7 +30,7 @@
                                 <p>{{ auth()->user()->headline }}</p>
                             </div>
                             <div class="wsus__dashboard_contant_btn">
-                                <a href="{{ route('student.profile.edit', auth()->user()->id) }}" class="common_btn">Edit
+                                <a href="{{ route('artist.profile.edit', auth()->user()->id) }}" class="common_btn">Edit
                                     Profile</a>
                             </div>
                         </div>

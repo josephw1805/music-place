@@ -21,7 +21,7 @@
     <section class="wsus__dashboard mt_90 xs_mt_70 pb_120 xs_pb_100">
         <div class="container">
             <div class="row">
-                @include('frontend.student-dashboard.sidebar')
+                @include('frontend.artist-dashboard.sidebar')
                 <div class="col-xl-9 col-md-8 wow fadeInRight">
                     <div class="wsus__dashboard_contant">
                         <div class="wsus__dashboard_contant_top d-flex flex-wrap justify-content-between">
@@ -31,7 +31,7 @@
                             </div>
                         </div>
 
-                        <form action="{{ route('student.profile.update') }}" class="wsus__dashboard_profile_update"
+                        <form action="{{ route('artist.profile.update') }}" class="wsus__dashboard_profile_update"
                             method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="wsus__dashboard_profile wsus__dashboard_profile_avatar">
@@ -133,7 +133,7 @@
                                 <h5>Update Your Password</h5>
                             </div>
                         </div>
-                        <form action="{{ route('student.profile.update-password') }}"
+                        <form action="{{ route('artist.profile.update-password') }}"
                             class="wsus__dashboard_profile_update" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
