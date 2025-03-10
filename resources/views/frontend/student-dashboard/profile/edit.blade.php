@@ -29,8 +29,10 @@
                                 <h5>Update Your Information</h5>
                                 <p>Manage your profile information.</p>
                             </div>
+                            <div class="wsus__dashboard_contant_btn">
+                                <a href="{{ route('student.profile.index', auth()->user()->id) }}" class="common_btn">Back</a>
+                            </div>
                         </div>
-
                         <form action="{{ route('student.profile.update') }}" class="wsus__dashboard_profile_update"
                             method="POST" enctype="multipart/form-data">
                             @csrf
@@ -49,7 +51,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-xl-6">
+                                <div class="col-xl-12">
                                     <div class="wsus__dashboard_profile_update_info">
                                         <label>Name</label>
                                         <input type="text" placeholder="Enter your name" name="name"
@@ -57,7 +59,7 @@
                                         <x-input-error :messages="$errors->get('name')" class="mt-2" />
                                     </div>
                                 </div>
-                                <div class="col-xl-6">
+                                <div class="col-xl-12">
                                     <div class="wsus__dashboard_profile_update_info">
                                         <label>Email</label>
                                         <input type="email" placeholder="Enter your mail" name="email"
@@ -71,17 +73,6 @@
                                         <input type="text" placeholder="Enter your headline" name="headline"
                                             value="{{ auth()->user()->headline }}">
                                         <x-input-error :messages="$errors->get('headline')" class="mt-2" />
-                                    </div>
-                                </div>
-                                <div class="col-xl-6">
-                                    <div class="wsus__dashboard_profile_update_info">
-                                        <label>Gender</label>
-                                        <select name="gender" class="form-control">
-                                            <option value="" selected disabled>Select</option>
-                                            <option @selected(auth()->user()->gender == 'male') value="male">Male</option>
-                                            <option @selected(auth()->user()->gender == 'female') value="female">Female</option>
-                                        </select>
-                                        <x-input-error :messages="$errors->get('gender')" class="mt-2" />
                                     </div>
                                 </div>
                                 <div class="col-xl-12">

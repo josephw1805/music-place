@@ -16,11 +16,7 @@
                 <div class="card-body">
                     <form action="{{ route('admin.album-generes.store') }}" method="POST">
                         @csrf
-                        <div class="mb-3">
-                            <label for="">Name</label>
-                            <input type="text" name="name" class="form-control" placeholder="Enter genere name">
-                            <x-input-error :messages="$errors->get('Name')" class="mt-2" />
-                        </div>
+                        <x-input-block name="name" placeholder="Enter Genere name" />
                         <div class="mb-3">
                             <button class="btn btn-primary" type="submit">
                                 <i class="ti ti-device-floppy"></i>

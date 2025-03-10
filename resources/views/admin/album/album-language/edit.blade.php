@@ -17,12 +17,8 @@
                     <form action="{{ route('admin.album-languages.update', $album_language->id) }}" method="POST">
                         @csrf
                         @method('PUT')
-                        <div class="mb-3">
-                            <label for="">Name</label>
-                            <input type="text" name="name" class="form-control" placeholder="Enter language name"
-                                value="{{ $album_language->name }}">
-                            <x-input-error :messages="$errors->get('Name')" class="mt-2" />
-                        </div>
+                        <x-input-block name="name" placeholder="Enter language name"
+                            value="{{ $album_language->name }}" />
                         <div class="mb-3">
                             <button class="btn btn-primary" type="submit"><i class="ti ti-device-floppy"></i>
                                 Update</button>

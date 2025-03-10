@@ -127,33 +127,24 @@
         </a>
         <div class="mobile_menu_icon d-block d-lg-none" data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
-            <span class="mobile_menu_icon"><i class="fas fa-bars"></i></span>
+            <span class="mobile_menu_icon"><i class="far fa-stream menu_icon_bar"></i></span>
         </div>
     </div>
 
     <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions">
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"><i class="fas fa-xmark"></i></button>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"><i
+                class="fal fa-times"></i></button>
         <div class="offcanvas-body">
 
             <ul class="mobile_menu_header d-flex flex-wrap">
-                <li><a href="cart_view.html"><i class="fas fa-basket-shopping"></i> <span>2</span></a>
+                <li><a href="cart_view.html"><i class="far fa-shopping-basket"></i> <span>2</span></a>
                 </li>
-                <li>
-                    @auth
-                        @if (auth()->user()->role === 'student')
-                            <a href="{{ route('student.dashboard') }}"><i class="far fa-user"></i></a>
-                        @else
-                            <a href="{{ route('artist.dashboard') }}"><i class="far fa-user"></i></a>
-                        @endif
-                    @else
-                        <a href="{{ route('login') }}"><i class="far fa-user"></i></a>
-                    @endauth
-                </li>
+                <li><a href="dashboard.html"><i class="far fa-user"></i></a></li>
             </ul>
 
             <form class="mobile_menu_search">
                 <input type="text" placeholder="Search">
-                <button type="submit"><i class="fas fa-magnifying-glass"></i></button>
+                <button type="submit"><i class="far fa-search"></i></button>
             </form>
 
             <div class="mobile_menu_item_area">
@@ -172,22 +163,26 @@
                         aria-labelledby="nav-home-tab" tabindex="0">
                         <ul class="main_mobile_menu">
                             <li class="mobile_dropdown">
-                                <a href="javascript:;">home</a>
+                                <a href="#">home</a>
                                 <ul class="inner_menu">
-                                    <li><a class="active" href="index.html">About</a></li>
-                                    <li><a class="active" href="index.html">Contact Us</a></li>
+                                    <li><a href="index_2.html">About</a></li>
+                                    <li><a href="index_3.html">Contact Us</a></li>
                                 </ul>
                             </li>
                             <li class="mobile_dropdown">
                                 <a href="#">courses</a>
                                 <ul class="inner_menu">
                                     <li><a href="courses.html">Courses</a></li>
+                                    <li><a href="courses_details.html">Course details</a></li>
+                                    <li><a href="course_video.html">Course video</a></li>
                                 </ul>
                             </li>
                             <li class="mobile_dropdown">
                                 <a href="#">blog</a>
                                 <ul class="inner_menu">
                                     <li><a href="blogs.html">blog grid view</a></li>
+                                    <li><a href="blog_list.html">blog list view</a></li>
+                                    <li><a href="blog_details.html">blog details</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -198,15 +193,102 @@
                             <li class="mobile_dropdown">
                                 <a href="#">
                                     <span>
-                                        <img src="{{ asset('frontend/assets/images/menu_category_icon_1.png') }}"
-                                            alt="Category" class="img-fluid">
+                                        <img src="images/menu_category_icon_1.png" alt="Category" class="img-fluid">
                                     </span>
                                     Development
                                 </a>
                                 <ul class="inner_menu">
                                     <li><a href="courses_details.html">Web Design</a></li>
+                                    <li><a href="courses_details.html">Web Development</a></li>
+                                    <li><a href="courses_details.html">UI/UX Design</a></li>
+                                    <li><a href="courses_details.html">Graphic Design</a></li>
                                 </ul>
                             </li>
+                            <li class="mobile_dropdown">
+                                <a href="#">
+                                    <span>
+                                        <img src="images/menu_category_icon_2.png" alt="Category" class="img-fluid">
+                                    </span>
+                                    Business
+                                </a>
+                                <ul class="inner_menu">
+                                    <li><a href="courses_details.html">Web Design</a></li>
+                                    <li><a href="courses_details.html">Web Development</a></li>
+                                    <li><a href="courses_details.html">UI/UX Design</a></li>
+                                    <li><a href="courses_details.html">Graphic Design</a></li>
+                                </ul>
+                            </li>
+                            <li class="mobile_dropdown">
+                                <a href="#">
+                                    <span>
+                                        <img src="images/menu_category_icon_3.png" alt="Category" class="img-fluid">
+                                    </span>
+                                    Marketing
+                                </a>
+                                <ul class="inner_menu">
+                                    <li><a href="courses_details.html">Web Design</a></li>
+                                    <li><a href="courses_details.html">Web Development</a></li>
+                                    <li><a href="courses_details.html">UI/UX Design</a></li>
+                                    <li><a href="courses_details.html">Graphic Design</a></li>
+                                </ul>
+                            </li>
+                            <li class="mobile_dropdown">
+                                <a href="#">
+                                    <span>
+                                        <img src="images/menu_category_icon_4.png" alt="Category" class="img-fluid">
+                                    </span>
+                                    Lifestyle
+                                </a>
+                                <ul class="inner_menu">
+                                    <li><a href="courses_details.html">Web Design</a></li>
+                                    <li><a href="courses_details.html">Web Development</a></li>
+                                    <li><a href="courses_details.html">UI/UX Design</a></li>
+                                    <li><a href="courses_details.html">Graphic Design</a></li>
+                                </ul>
+                            </li>
+                            <li class="mobile_dropdown">
+                                <a href="#">
+                                    <span>
+                                        <img src="images/menu_category_icon_5.png" alt="Category" class="img-fluid">
+                                    </span>
+                                    Health & Fitness
+                                </a>
+                                <ul class="inner_menu">
+                                    <li><a href="courses_details.html">Web Design</a></li>
+                                    <li><a href="courses_details.html">Web Development</a></li>
+                                    <li><a href="courses_details.html">UI/UX Design</a></li>
+                                    <li><a href="courses_details.html">Graphic Design</a></li>
+                                </ul>
+                            </li>
+                            <li class="mobile_dropdown">
+                                <a href="#">
+                                    <span>
+                                        <img src="images/menu_category_icon_6.png" alt="Category" class="img-fluid">
+                                    </span>
+                                    Design
+                                </a>
+                                <ul class="inner_menu">
+                                    <li><a href="courses_details.html">Web Design</a></li>
+                                    <li><a href="courses_details.html">Web Development</a></li>
+                                    <li><a href="courses_details.html">UI/UX Design</a></li>
+                                    <li><a href="courses_details.html">Graphic Design</a></li>
+                                </ul>
+                            </li>
+                            <li class="mobile_dropdown">
+                                <a href="#">
+                                    <span>
+                                        <img src="images/menu_category_icon_7.png" alt="Category" class="img-fluid">
+                                    </span>
+                                    Academics
+                                </a>
+                                <ul class="inner_menu">
+                                    <li><a href="courses_details.html">Web Design</a></li>
+                                    <li><a href="courses_details.html">Web Development</a></li>
+                                    <li><a href="courses_details.html">UI/UX Design</a></li>
+                                    <li><a href="courses_details.html">Graphic Design</a></li>
+                                </ul>
+                            </li>
+
                         </ul>
                     </div>
                 </div>

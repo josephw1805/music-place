@@ -12,12 +12,12 @@ trait FileUpload
         $filename = 'wdia_' . uniqid() . '.' . $file->getClientOriginalExtension();
 
         // move the file to storage
-        $file->move(public_path($directory), $filename);
+        $file->storeAs($directory, $filename, 'public');
 
         return '/' . $directory . '/' . $filename;
     }
 
-    public function deleteFile(string $path): bool
+    public function deleteFile(?string $path): bool
     {
         if (File::exists(public_path($path))) {
             File::delete(public_path($path));

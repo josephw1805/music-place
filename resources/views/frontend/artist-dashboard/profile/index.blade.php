@@ -44,7 +44,6 @@
 
                         <ul class="wsus__dashboard_profile_info">
                             <li><span>Name :</span>{{ auth()->user()->name }}</li>
-                            <li><span>Gender :</span>{{ auth()->user()->gender }}</li>
                             <li><span>Email :</span>{{ auth()->user()->email }}</li>
                             <li><span>Facebook :</span>{{ auth()->user()->facebook }}</li>
                             <li><span>TikTok :</span>{{ auth()->user()->tiktok }}</li>

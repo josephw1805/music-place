@@ -18,23 +18,43 @@
                         <table class="table table-vcenter card-table">
                             <thead>
                                 <tr>
+                                    <th>Icon</th>
                                     <th>Name</th>
-                                    <th>Slug</th>
+                                    <th>Trending</th>
+                                    <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
 
-                                {{-- @forelse ($generes as $genere)
+                                @forelse ($categories as $category)
                                     <tr>
-                                        <td>{{ $genere->name }}</td>
-                                        <td>{{ $genere->slug }}</td>
+                                        <td><i class="{{ $category->icon }}"></i></td>
+                                        <td>{{ $category->name }}</td>
                                         <td>
-                                            <a href="{{ route('admin.album-generes.edit', $genere->id) }}"
+                                            @if ($category->show_at_trending)
+                                                <span class="badge bg-lime text-lime-fg">Yes</span>
+                                            @else
+                                                <span class="badge bg-red text-red-fg">No</span>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if ($category->status)
+                                                <span class="badge bg-lime text-lime-fg">Yes</span>
+                                            @else
+                                                <span class="badge bg-red text-red-fg">No</span>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            <a href="{{ route('admin.album-sub-categories.index', $category->id) }}"
+                                                class="btn btn-warning">
+                                                <i class="ti ti-list"></i>
+                                            </a>
+                                            <a href="{{ route('admin.album-categories.edit', $category->id) }}"
                                                 class="btn btn-info">
                                                 <i class="ti ti-edit"></i>
                                             </a>
-                                            <a href="{{ route('admin.album-generes.destroy', $genere->id) }}"
+                                            <a href="{{ route('admin.album-categories.destroy', $category->id) }}"
                                                 class="btn btn-danger delete-item">
                                                 <i class="ti ti-trash"></i>
                                             </a>
@@ -42,13 +62,13 @@
                                     </tr>
                                 @empty
                                     <tr>
-                                        <td colspan="3">No Data Available!</td>
+                                        <td colspan="5">No Data Available!</td>
                                     </tr>
-                                @endforelse --}}
+                                @endforelse
                             </tbody>
                         </table>
                         <div class="mt-4">
-                            {{-- {{ $generes->links() }} --}}
+                            {{ $categories->links() }}
                         </div>
                     </div>
                 </div>

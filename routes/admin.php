@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AlbumCategoryController;
 use App\Http\Controllers\Admin\AlbumGenereController;
 use App\Http\Controllers\Admin\AlbumLanguageController;
+use App\Http\Controllers\Admin\AlbumSubCategoryController;
 use App\Http\Controllers\Admin\ArtistRequestController;
 use App\Http\Controllers\Admin\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Admin\Auth\NewPasswordController;
@@ -51,4 +52,10 @@ Route::group(['middleware' => 'auth:admin', 'prefix' => 'admin', 'as' => 'admin.
 
     /** Album Categories Routes */
     Route::resource('album-categories', AlbumCategoryController::class);
+    Route::get('{album_category}/sub-categories', [AlbumSubCategoryController::class, 'index'])->name('album-sub-categories.index');
+    Route::get('{album_category}/sub-categories/create', [AlbumSubCategoryController::class, 'create'])->name('album-sub-categories.create');
+    Route::post('{album_category}/sub-categories', [AlbumSubCategoryController::class, 'store'])->name('album-sub-categories.store');
+    Route::get('{album_category}/sub-categories/{album_sub_category}/edit', [AlbumSubCategoryController::class, 'edit'])->name('album-sub-categories.edit');
+    Route::put('{album_category}/sub-categories/{album_sub_category}', [AlbumSubCategoryController::class, 'update'])->name('album-sub-categories.update');
+    Route::delete('{album_category}/sub-categories/{album_sub_category}', [AlbumSubCategoryController::class, 'destroy'])->name('album-sub-categories.destroy');
 });
