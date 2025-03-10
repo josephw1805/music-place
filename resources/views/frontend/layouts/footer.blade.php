@@ -12,7 +12,7 @@
                             <p>Nunc in sollicitudin diam, ut bibendum malesuada sodales porttitor.</p>
                             <h2>Follow Us On</h2>
                             <ul class="d-flex flex-wrap">
-                                <li><a href="#"><i class="fab fa-x-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
                                 <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                 <li><a href="#"><i class="fab fa-instagram"></i></a></li>
                             </ul>

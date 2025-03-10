@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\AlbumCategoryController;
+use App\Http\Controllers\Admin\AlbumGenereController;
+use App\Http\Controllers\Admin\AlbumLanguageController;
 use App\Http\Controllers\Admin\ArtistRequestController;
 use App\Http\Controllers\Admin\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Admin\Auth\NewPasswordController;
@@ -36,6 +39,16 @@ Route::group(['middleware' => 'auth:admin', 'prefix' => 'admin', 'as' => 'admin.
 
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
+    /**Artist Request Routes */
     Route::get('artist-doc-download/{artist_request}', [ArtistRequestController::class, 'download'])->name('artist-doc-download');
     Route::resource('artist-request', ArtistRequestController::class);
+
+    /** Album Languages Routes */
+    Route::resource('album-languages', AlbumLanguageController::class);
+
+    /** Album Generes Routes */
+    Route::resource('album-generes', AlbumGenereController::class);
+
+    /** Album Categories Routes */
+    Route::resource('album-categories', AlbumCategoryController::class);
 });

@@ -7,6 +7,7 @@ use App\Http\Requests\Frontend\PasswordUpdateRequest;
 use App\Http\Requests\Frontend\ProfileUpdateRequest;
 use App\Models\User;
 use App\Traits\FileUpload;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,12 +15,12 @@ class ArtistProfileController extends Controller
 {
     use FileUpload;
 
-    public function index()
+    public function index(): View
     {
         return view('frontend.artist-dashboard.profile.index');
     }
 
-    public function edit(User $user)
+    public function edit(User $user): View
     {
         return view('frontend.artist-dashboard.profile.edit', compact('user'));
     }

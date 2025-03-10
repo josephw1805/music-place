@@ -56,7 +56,7 @@
                 <a class="nav-link" href="about.html">About Us</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Courses <i class="far fa-angle-down"></i></a>
+                <a class="nav-link" href="#">Courses <i class="fas fa-angle-down"></i></a>
                 <ul class="droap_menu">
                     <li><a href="courses.html">Courses</a></li>
                     <li><a href="courses_details.html">Course details</a></li>
@@ -64,7 +64,7 @@
                 </ul>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">blog <i class="far fa-angle-down"></i></a>
+                <a class="nav-link" href="#">blog <i class="fas fa-angle-down"></i></a>
                 <ul class="droap_menu">
                     <li><a href="blogs.html">blog grid view</a></li>
                     <li><a href="blog_list.html">blog list view</a></li>
@@ -127,17 +127,16 @@
         </a>
         <div class="mobile_menu_icon d-block d-lg-none" data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
-            <span class="mobile_menu_icon"><i class="far fa-stream menu_icon_bar"></i></span>
+            <span class="mobile_menu_icon"><i class="fas fa-bars"></i></span>
         </div>
     </div>
 
     <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions">
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"><i
-                class="fal fa-times"></i></button>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"><i class="fas fa-xmark"></i></button>
         <div class="offcanvas-body">
 
             <ul class="mobile_menu_header d-flex flex-wrap">
-                <li><a href="cart_view.html"><i class="far fa-shopping-basket"></i> <span>2</span></a>
+                <li><a href="cart_view.html"><i class="fas fa-basket-shopping"></i> <span>2</span></a>
                 </li>
                 <li>
                     @auth
@@ -154,7 +153,7 @@
 
             <form class="mobile_menu_search">
                 <input type="text" placeholder="Search">
-                <button type="submit"><i class="far fa-search"></i></button>
+                <button type="submit"><i class="fas fa-magnifying-glass"></i></button>
             </form>
 
             <div class="mobile_menu_item_area">

@@ -18,7 +18,7 @@
                             </defs>
                             <text>
                                 <textPath xlink:href="#circle">
-                                    take the worldwide best online albums
+                                    the worldwide best online albums
                                 </textPath>
                             </text>
                         </svg>

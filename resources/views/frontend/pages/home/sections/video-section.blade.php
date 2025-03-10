@@ -1,5 +1,5 @@
 <section class="wsus__video mt_120 xs_mt_100">
-    <img src="{{ asset('frontend/assets/images/video_bg.jpg') }}"" alt="Video" class="img-fluid w-100">
+    <img src="{{ asset('frontend/assets/images/video_bg.png') }}"" alt="Video" class="img-fluid w-100">
     <a class="play_btn venobox" data-autoplay="true" data-vbtype="video"
         href="https://youtu.be/sVPYIRF9RCQ?si=labNkx-xlyOWtptr">
         <img src="{{ asset('frontend/assets/images/play_icon_white.png') }}" alt="Play" class="img-fluid">
