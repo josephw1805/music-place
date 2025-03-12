@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="base_url" content="{{ url('/') }}">
+    <meta name="csrf_token" content="{{ csrf_token() }}">
     <title>WDIA - Music Place</title>
     <link rel="icon" type="image/png" href="{{ asset('frontend/assets/images/favicon.png') }}">
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/all.min.css') }}">
@@ -23,10 +25,12 @@
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/select2.min.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/sticky_menu.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/animate.css') }}">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
     <link rel=" stylesheet" href="{{ asset('frontend/assets/css/spacing.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/responsive.css') }}">
+    <!--dynamic js-->
+    @stack('header_scripts')
 </head>
 
 <body class="home_3">
@@ -44,20 +48,20 @@
 
     @yield('content')
 
-    @include('frontend.layouts.footer')
+    <!-- Modal -->
+    <div class="modal fade" id="dynamic-modal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg dynamic-modal-content">
+            
+        </div>
+    </div>
 
-    <!--================================
-        SCROLL BUTTON START
-    =================================-->
     <div class="progress-wrap">
         <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
             <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
         </svg>
     </div>
-    <!--================================
-        SCROLL BUTTON END
-    =================================-->
 
+    @include('frontend.layouts.footer')
 
     <!--jquery library js-->
     <script src="{{ asset('frontend/assets/js/jquery-3.7.1.min.js') }}"></script>
@@ -94,12 +98,18 @@
     <script src="{{ asset('frontend/assets/js/select2.min.js') }}"></script>
     <!--Video player js-->
     <script src="{{ asset('frontend/assets/js/video_player.min.js') }}"></script>
-    <script src="{{ asset('frontend/assets/js/video_player_youtube.js') }}"></script>
     <!--wow js-->
     <script src="{{ asset('frontend/assets/js/wow.min.js') }}"></script>
 
+    <!--notyf js-->
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+
     <!--main/custom js-->
+    <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
     <script src="{{ asset('frontend/assets/js/main.js') }}"></script>
+
+    <!--dynamic js-->
+    @stack('scripts')
 
 </body>
 

@@ -139,7 +139,6 @@
     <script src="{{ asset('frontend/assets/js/select2.min.js') }}"></script>
     <!--Video player js-->
     <script src="{{ asset('frontend/assets/js/video_player.min.js') }}"></script>
-    <script src="{{ asset('frontend/assets/js/video_player_youtube.js') }}"></script>
     <!--wow js-->
     <script src="{{ asset('frontend/assets/js/wow.min.js') }}"></script>
 

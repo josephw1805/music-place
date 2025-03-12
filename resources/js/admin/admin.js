@@ -2,7 +2,11 @@ import $ from 'jquery';
 window.$ = window.jQuery = $;
 
 let notyf = new Notyf({
-    duration: 4000
+    duration: 4000,
+    position: {
+        x: 'right',
+        y: 'top',
+    }
 });
 
 const scrf_token = $('meta[name=csrf_token]').attr('content');

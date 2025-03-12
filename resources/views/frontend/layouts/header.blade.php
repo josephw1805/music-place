@@ -34,7 +34,7 @@
                 <li>
                     <a href="#">
                         <span>
-                            <img src="{{ asset('frontend/assets/images/menu_category_icon_1.png') }}" alt="Category"
+                            <img src="" alt="Category"
                                 class="img-fluid">
                         </span>
                         Development
@@ -193,7 +193,7 @@
                             <li class="mobile_dropdown">
                                 <a href="#">
                                     <span>
-                                        <img src="images/menu_category_icon_1.png" alt="Category" class="img-fluid">
+                                        <img src="" alt="Category" class="img-fluid">
                                     </span>
                                     Development
                                 </a>
@@ -204,91 +204,6 @@
                                     <li><a href="courses_details.html">Graphic Design</a></li>
                                 </ul>
                             </li>
-                            <li class="mobile_dropdown">
-                                <a href="#">
-                                    <span>
-                                        <img src="images/menu_category_icon_2.png" alt="Category" class="img-fluid">
-                                    </span>
-                                    Business
-                                </a>
-                                <ul class="inner_menu">
-                                    <li><a href="courses_details.html">Web Design</a></li>
-                                    <li><a href="courses_details.html">Web Development</a></li>
-                                    <li><a href="courses_details.html">UI/UX Design</a></li>
-                                    <li><a href="courses_details.html">Graphic Design</a></li>
-                                </ul>
-                            </li>
-                            <li class="mobile_dropdown">
-                                <a href="#">
-                                    <span>
-                                        <img src="images/menu_category_icon_3.png" alt="Category" class="img-fluid">
-                                    </span>
-                                    Marketing
-                                </a>
-                                <ul class="inner_menu">
-                                    <li><a href="courses_details.html">Web Design</a></li>
-                                    <li><a href="courses_details.html">Web Development</a></li>
-                                    <li><a href="courses_details.html">UI/UX Design</a></li>
-                                    <li><a href="courses_details.html">Graphic Design</a></li>
-                                </ul>
-                            </li>
-                            <li class="mobile_dropdown">
-                                <a href="#">
-                                    <span>
-                                        <img src="images/menu_category_icon_4.png" alt="Category" class="img-fluid">
-                                    </span>
-                                    Lifestyle
-                                </a>
-                                <ul class="inner_menu">
-                                    <li><a href="courses_details.html">Web Design</a></li>
-                                    <li><a href="courses_details.html">Web Development</a></li>
-                                    <li><a href="courses_details.html">UI/UX Design</a></li>
-                                    <li><a href="courses_details.html">Graphic Design</a></li>
-                                </ul>
-                            </li>
-                            <li class="mobile_dropdown">
-                                <a href="#">
-                                    <span>
-                                        <img src="images/menu_category_icon_5.png" alt="Category" class="img-fluid">
-                                    </span>
-                                    Health & Fitness
-                                </a>
-                                <ul class="inner_menu">
-                                    <li><a href="courses_details.html">Web Design</a></li>
-                                    <li><a href="courses_details.html">Web Development</a></li>
-                                    <li><a href="courses_details.html">UI/UX Design</a></li>
-                                    <li><a href="courses_details.html">Graphic Design</a></li>
-                                </ul>
-                            </li>
-                            <li class="mobile_dropdown">
-                                <a href="#">
-                                    <span>
-                                        <img src="images/menu_category_icon_6.png" alt="Category" class="img-fluid">
-                                    </span>
-                                    Design
-                                </a>
-                                <ul class="inner_menu">
-                                    <li><a href="courses_details.html">Web Design</a></li>
-                                    <li><a href="courses_details.html">Web Development</a></li>
-                                    <li><a href="courses_details.html">UI/UX Design</a></li>
-                                    <li><a href="courses_details.html">Graphic Design</a></li>
-                                </ul>
-                            </li>
-                            <li class="mobile_dropdown">
-                                <a href="#">
-                                    <span>
-                                        <img src="images/menu_category_icon_7.png" alt="Category" class="img-fluid">
-                                    </span>
-                                    Academics
-                                </a>
-                                <ul class="inner_menu">
-                                    <li><a href="courses_details.html">Web Design</a></li>
-                                    <li><a href="courses_details.html">Web Development</a></li>
-                                    <li><a href="courses_details.html">UI/UX Design</a></li>
-                                    <li><a href="courses_details.html">Graphic Design</a></li>
-                                </ul>
-                            </li>
-
                         </ul>
                     </div>
                 </div>

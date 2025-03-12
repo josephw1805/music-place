@@ -9,8 +9,7 @@
                     quam odio ipsum
                     sollicitudin rhoncus venenatis ex metus in turpis.</p>
                 <div class="wsus__banner_2_btn_area mt_60">
-                    <a class="common_btn" href="#">Start Free Trial <i class="far fa-arrow-right"
-                            aria-hidden="true"></i></a>
+                    <a class="common_btn" href="#">Start Free Trial <i class="far fa-arrow-right"></i></a>
                     <div class="play_btn_area">
                         <a class="play_btn venobox vbox-item" data-autoplay="true" data-vbtype="video"
                             href="https://youtu.be/sVPYIRF9RCQ?si=labNkx-xlyOWtptr">

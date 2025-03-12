@@ -135,11 +135,11 @@
                                                     </td>
                                                     <td class="details">
                                                         <p class="rating">
-                                                            <i class="fas fa-star" aria-hidden="true"></i>
-                                                            <i class="fas fa-star" aria-hidden="true"></i>
-                                                            <i class="fas fa-star" aria-hidden="true"></i>
-                                                            <i class="fas fa-star-half-alt" aria-hidden="true"></i>
-                                                            <i class="far fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star-half-alt"></i>
+                                                            <i class="far fa-star"></i>
                                                             <span>(5.0)</span>
                                                         </p>
                                                         <a class="title" href="#">Complete Blender Creator Learn
@@ -162,11 +162,11 @@
                                                     </td>
                                                     <td class="details">
                                                         <p class="rating">
-                                                            <i class="fas fa-star" aria-hidden="true"></i>
-                                                            <i class="fas fa-star" aria-hidden="true"></i>
-                                                            <i class="fas fa-star" aria-hidden="true"></i>
-                                                            <i class="fas fa-star-half-alt" aria-hidden="true"></i>
-                                                            <i class="far fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star-half-alt"></i>
+                                                            <i class="far fa-star"></i>
                                                             <span>(5.0)</span>
                                                         </p>
                                                         <a class="title" href="#">Complete Blender Creator Learn
@@ -189,11 +189,11 @@
                                                     </td>
                                                     <td class="details">
                                                         <p class="rating">
-                                                            <i class="fas fa-star" aria-hidden="true"></i>
-                                                            <i class="fas fa-star" aria-hidden="true"></i>
-                                                            <i class="fas fa-star" aria-hidden="true"></i>
-                                                            <i class="fas fa-star-half-alt" aria-hidden="true"></i>
-                                                            <i class="far fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star-half-alt"></i>
+                                                            <i class="far fa-star"></i>
                                                             <span>(5.0)</span>
                                                         </p>
                                                         <a class="title" href="#">Complete Blender Creator Learn

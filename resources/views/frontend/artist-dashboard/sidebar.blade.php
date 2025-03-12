@@ -33,7 +33,7 @@
                 </a>
             </li>
             <li>
-                <a href="dashboard_courses.html">
+                <a href="{{ route('artist.albums.index') }}" class="{{ request()->is('artist/albums*') ? 'active' : '' }}">
                     <div class="img">
                         <img src="{{ asset('frontend/assets/images/dash_icon_2.png') }}" alt="icon"
                             class="img-fluid w-100">
@@ -47,7 +47,7 @@
                         <img src="{{ asset('frontend/assets/images/dash_icon_6.png') }}" alt="icon"
                             class="img-fluid w-100">
                     </div>
-                    student
+                    Followers
                 </a>
             </li>
             <li>
