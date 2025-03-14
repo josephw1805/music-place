@@ -51,7 +51,7 @@
                                                         ACTION
                                                     </th>
                                                 </tr>
-                                                @foreach ($albums as $album)
+                                                @forelse ($albums as $album)
                                                     <tr>
                                                         <td class="image">
                                                             <div class="image_category">
@@ -80,11 +80,13 @@
                                                             <a class="edit"
                                                                 href="{{ route('artist.albums.edit', ['id' => $album->id, 'step' => 1]) }}"><i
                                                                     class="far fa-edit"></i></a>
-                                                            <a class="del" href="#"><i
-                                                                    class="fas fa-trash-alt"></i></a>
                                                         </td>
                                                     </tr>
-                                                @endforeach
+                                                @empty
+                                                    <tr>
+                                                        <td colspan="5">No Data Available!</td>
+                                                    </tr>
+                                                @endforelse
                                             </tbody>
                                         </table>
                                     </div>

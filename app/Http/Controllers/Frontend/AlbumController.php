@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Frontend\AlbumBasicInfoCreateRequest;
 use App\Models\Album;
 use App\Models\AlbumCategory;
+use App\Models\AlbumChapter;
 use App\Models\AlbumGenere;
 use App\Models\AlbumLanguage;
 use App\Traits\FileUpload;
@@ -70,7 +71,12 @@ class AlbumController extends Controller
                 return view('frontend.artist-dashboard.album.more-info', compact('categories', 'generes', 'languages', 'album'));
             case '3':
                 $albumId = $request->id;
-                return view('frontend.artist-dashboard.album.album-content', compact('albumId'));
+                $chapters = AlbumChapter::where(['album_id' => $albumId, 'artist_id' => Auth::user()->id])->orderBy('order')->get();
+                return view('frontend.artist-dashboard.album.album-content', compact('albumId', 'chapters'));
+            case '4':
+                $album = Album::findOrFail($request->id);
+                $editMode = true;
+                return view('frontend.artist-dashboard.album.finish', compact('album', 'editMode'));
         }
     }
 
@@ -133,6 +139,30 @@ class AlbumController extends Controller
                     'status' => 'success',
                     'message' => 'Updated successfully',
                     'redirect' => route('artist.albums.edit', ['id' => $album->id, 'step' => $request->next_step])
+                ]);
+            case '3':
+                return response([
+                    'status' => 'success',
+                    'message' => 'Updated successfully',
+                    'redirect' => route('artist.albums.edit', ['id' => $request->id, 'step' => $request->next_step])
+                ]);
+            case '4':
+                // validation
+                $request->validate([
+                    'message' => ['nullable', 'max:1000'],
+                    'status' => ['required', 'in:active,inactive,draft']
+                ]);
+
+                // update album data
+                $album = Album::findOrFail($request->id);
+                $album->message_for_reviewer = $request->message;
+                $album->status = $request->status;
+                $album->save();
+
+                return response([
+                    'status' => 'success',
+                    'message' => 'Updated successfully',
+                    'redirect' => route('artist.albums.index')
                 ]);
         }
     }

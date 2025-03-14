@@ -29,6 +29,7 @@
     <link rel=" stylesheet" href="{{ asset('frontend/assets/css/spacing.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/jquery-ui.min.css') }}">
     <!--dynamic js-->
     @stack('header_scripts')
 </head>
@@ -49,9 +50,9 @@
     @yield('content')
 
     <!-- Modal -->
-    <div class="modal fade" id="dynamic-modal" tabindex="-1">
+    <div class="modal fade" id="dynamic-modal" tabindex="-1" data-bs-backdrop='static'>
         <div class="modal-dialog modal-dialog-centered modal-lg dynamic-modal-content">
-            
+
         </div>
     </div>
 
@@ -100,17 +101,26 @@
     <script src="{{ asset('frontend/assets/js/video_player.min.js') }}"></script>
     <!--wow js-->
     <script src="{{ asset('frontend/assets/js/wow.min.js') }}"></script>
-
     <!--notyf js-->
     <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
-
+    <!--sweetalert js-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!--jquery ui js-->
+    <script src="{{ asset('frontend/assets/js/jquery-ui.min.js') }}"></script>
     <!--main/custom js-->
     <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
     <script src="{{ asset('frontend/assets/js/main.js') }}"></script>
 
     <!--dynamic js-->
     @stack('scripts')
-
+    @vite('resources/js/frontend/frontend.js')
+    <script>
+        @if ($errors->any())
+            @foreach ($errors->all() as $error)
+                notyf.error('{{ $error }}');
+            @endforeach
+        @endif
+    </script>
 </body>
 
 </html>

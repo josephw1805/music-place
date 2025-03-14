@@ -50,7 +50,18 @@ Route::group(['middleware' => ['auth:web', 'verified', 'check_role:artist'], 'pr
     Route::post('albums/update', [AlbumController::class, 'update'])->name('albums.update');
 
     Route::get('album-content/{album}/create-chapter', [AlbumContentController::class, 'createChapterModal'])->name('album-content.create-chapter');
-    Route::post('album-content/{album}/create-chapter', [AlbumContentController::class, 'StoreChapter'])->name('album-content.store-chapter');
+    Route::post('album-content/{album}/create-chapter', [AlbumContentController::class, 'storeChapter'])->name('album-content.store-chapter');
+    Route::get('album-content/{chapter}/edit-chapter', [AlbumContentController::class, 'editChapterModal'])->name('album-content.edit-chapter');
+    Route::post('album-content/{chapter}/update-chapter', [AlbumContentController::class, 'updateChapter'])->name('album-content.update-chapter');
+    Route::delete('album-content/{chapter}/destroy-chapter', [AlbumContentController::class, 'destroyChapter'])->name('album-content.destroy-chapter');
+    Route::get('album-content/create-track', [AlbumContentController::class, 'createTrack'])->name('album-content.create-track');
+    Route::post('album-content/create-track', [AlbumContentController::class, 'storeTrack'])->name('album-content.store-track');
+    Route::get('album-content/edit-track', [AlbumContentController::class, 'editTrack'])->name('album-content.edit-track');
+    Route::post('album-content/{id}/update-track', [AlbumContentController::class, 'updateTrack'])->name('album-content.update-track');
+    Route::delete('album-content/{id}/track', [AlbumContentController::class, 'destroyTrack'])->name('album-content.destroy-track');
+    Route::post('album-content/{chapter}/sort-track', [AlbumContentController::class, 'sortTrack'])->name('album-chapter.sort-track');
+    Route::get('album-content/{album}/sort-chapter', [AlbumContentController::class, 'sortChapter'])->name('album-content.sort-chapter');
+    Route::post('album-content/{album}/sort-chapter', [AlbumContentController::class, 'updateSortChapter'])->name('album-content.update-sort-chapter');
 
     /** lfm Routes */
     Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
